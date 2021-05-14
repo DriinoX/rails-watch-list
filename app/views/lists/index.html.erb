@@ -9,7 +9,8 @@
 <div class="d-flex m-3 justify-content-center">
   <% @lists.each do |list| %>
     <div class="card-product ml-3">
-      <img src="https://images.pexels.com/photos/2747893/pexels-photo-2747893.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" />
+      <!-- <img src="https://images.pexels.com/photos/2747893/pexels-photo-2747893.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" /> -->
+      <%= cl_image_tag @article.photo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-product-infos">
         <h3> <%= link_to list.name, list_path(list.id) %> </h3>
         <p>Product description.</p>
