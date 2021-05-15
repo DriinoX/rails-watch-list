@@ -18,11 +18,11 @@ puts "Create new movies.."
 # Movie.create(title: "Titanic", overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
 # Movie.create(title: "Ocean's Eight", overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
 
-url = 'http://tmdb.lewagon.com/movie/top_rated'
+url = 'http://tmdb.lewagon.com/movie/popular'
 movies_serialized = URI.open(url).read
 movies = JSON.parse(movies_serialized)
 
-movies["results"].first(10).each do |movie|
+movies["results"].first(30).each do |movie|
   Movie.create!(title: movie["original_title"], overview: movie["overview"], poster_url: "https://image.tmdb.org/t/p/w500#{movie["poster_path"]}", rating: movie["vote_average"])
 end
 puts "Done"

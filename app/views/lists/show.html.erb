@@ -16,8 +16,9 @@
       <div class="card-product flex-grow-1">
         <img src= "<%= movie.poster_url %>" />
         <div class="card-product-infos">
-          <h3> <%= movie.title %></h3>
-          <p> <%= bookmark.comment %></p>
+          <h3> <%= movie.title %> - <%= movie.rating %>/10</h3>
+          <p> <%= movie.overview %> </p>
+          <p><strong><%= bookmark.comment %></strong></p>
         </div>
       </div>
     </div>

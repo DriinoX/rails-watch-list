@@ -19,4 +19,12 @@
 
 a {
   text-decoration: none;
+  color: black;
+}
+
+h3 {
+  color: $blue;
+  a{
+    color: $blue;
+  }
 }

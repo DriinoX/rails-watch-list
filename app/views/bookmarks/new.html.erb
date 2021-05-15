@@ -1,7 +1,11 @@
-<h1>Create new bookmark </h1>
-
-<%= simple_form_for [@list,@bookmark] do |f| %>
-  <%= f.association :movie%>
-  <%= f.input :comment %>
-  <%= f.submit 'Create new bookmark' %>
-<% end %>
+<div class="container mt-3">
+  <h1>Create new bookmark </h1>
+  <h3 class="mt-4"> Choose a title of movie and your comment to create a new bookmark </h3>
+  <%= simple_form_for [@list,@bookmark] do |f| %>
+    <div class="border border-primary rounded p-3">
+      <%= f.association :movie%>
+      <%= f.input :comment %>
+    </div>
+    <%= f.submit 'Create new bookmark', class:'btn btn-primary mt-2' %>
+  <% end %>
+</div>
